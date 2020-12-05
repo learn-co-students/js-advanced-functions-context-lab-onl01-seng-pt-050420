@@ -158,9 +158,9 @@ describe("The payroll system", function () {
 
     describe("wagesEarnedOnDate", function () {
       it("calculates that the employee earned 54 dollars", function () {
-        cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
-        createTimeInEvent.call(cRecord, "44-03-15 0900")
-        createTimeOutEvent.call(cRecord, "44-03-15 1100")
+          cRecord = createEmployeeRecord(["Julius", "Caesar", "General", 27])
+          createTimeInEvent.call(cRecord, "44-03-15 0900")
+          createTimeOutEvent.call(cRecord, "44-03-15 1100")
         expect(wagesEarnedOnDate.call(cRecord, "44-03-15")).to.equal(54)
       })
 
