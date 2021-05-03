@@ -29,7 +29,7 @@ let createTimeInEvent = function(dateStamp){
 let createTimeOutEvent = function(dateStamp){
     let [date, hour] = dateStamp.split(' ')
 
-    this.timeInEvents.push({
+    this.timeOutEvents.push({
         type: "TimeOut",
         hour: parseInt(hour, 10),
         date,
@@ -50,7 +50,7 @@ let hoursWorkedOnDate = function(soughtDate){
 }
 
 let wagesEarnedOnDate = function(dateSought){
-    let rawWage = hoursWorkedOnDate(this, dateSought)
+    let rawWage = hoursWorkedOnDate.call(this, dateSought)
         * this.payPerHour
     return parseFloat(rawWage.toString())
 }
@@ -77,4 +77,4 @@ let findEmployeeByFirstName = function(srcArray, firstName) {
     return arrayOfEmployeeRecords.reduce(function(memo, rec){
         return memo + allWagesFor.call(rec)
     }, 0)
-}
+}  
